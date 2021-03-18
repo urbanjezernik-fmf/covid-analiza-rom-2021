@@ -1,0 +1,60 @@
+(* Content-type: application/vnd.wolfram.mathematica *)
+
+(*** Wolfram Notebook File ***)
+(* http://www.wolfram.com/nb *)
+
+(* CreatedBy='Mathematica 12.1' *)
+
+(*CacheID: 234*)
+(* Internal cache information:
+NotebookFileLineBreakTest
+NotebookFileLineBreakTest
+NotebookDataPosition[       158,          7]
+NotebookDataLength[      1476,         52]
+NotebookOptionsPosition[      1006,         35]
+NotebookOutlinePosition[      1399,         51]
+CellTagsIndexPosition[      1356,         48]
+WindowFrame->Normal*)
+
+(* Beginning of Notebook Content *)
+Notebook[{
+
+Cell[CellGroupData[{
+Cell["Covid", "Title",
+ CellChangeTimes->{{3.825064903523961*^9, 3.825064926396481*^9}, {
+  3.825066076180868*^9, 
+  3.825066079825165*^9}},ExpressionUUID->"52c07043-0fc0-4b9c-8ee9-\
+651caf285f05"],
+
+Cell["Analiza razlicnih aspektov epidemije v Sloveniji in po svetu", \
+"Subtitle",
+ CellChangeTimes->{{3.825066087108139*^9, 
+  3.8250660971146708`*^9}},ExpressionUUID->"41edfe03-a6f1-45d5-982a-\
+25067c1d7b47"]
+}, Open  ]]
+},
+WindowSize->{956, 755},
+WindowMargins->{{33, Automatic}, {Automatic, 44}},
+FrontEndVersion->"12.1 for Mac OS X x86 (64-bit) (June 19, 2020)",
+StyleDefinitions->"Default.nb",
+ExpressionUUID->"9bf0d2ef-7731-4e51-b8d2-8c3e035721fa"
+]
+(* End of Notebook Content *)
+
+(* Internal cache information *)
+(*CellTagsOutline
+CellTagsIndex->{}
+*)
+(*CellTagsIndex
+CellTagsIndex->{}
+*)
+(*NotebookFileOutline
+Notebook[{
+Cell[CellGroupData[{
+Cell[580, 22, 197, 4, 98, "Title",ExpressionUUID->"52c07043-0fc0-4b9c-8ee9-651caf285f05"],
+Cell[780, 28, 210, 4, 53, "Subtitle",ExpressionUUID->"41edfe03-a6f1-45d5-982a-25067c1d7b47"]
+}, Open  ]]
+}
+]
+*)
+
