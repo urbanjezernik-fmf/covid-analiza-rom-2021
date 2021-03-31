@@ -8,7 +8,9 @@ Pri projektu uporabljamo racunalniski program _Mathematica_.
 
 1. Pridobivanje podatkov. Uporabil bom Wolfram data repository.
 2. Casovna analiza stevila obolelih v Sloveniji in v drzavah EU. Narisal bom nekaj grafov stevila okuzenih, predstavil bom tudi stevilo umrlih v zadnjih dneh v drzavah EU.
-3. Analiza stevila umrlih. Ali obstaja kaksna povezava med stevilom umrlih in povprecno starostjo v drzavi? Pregledal bom podatke po drzavah EU in skusal razumeti, ce res obstaja povezava.
-4. Raziskal bom podatke o simptomih bolezni in o pridruzenih boleznih umrlih.
+3. Naredil bom aplikacijo v oblaku, ki bo kot vnos sprejela drzavo in narisala graf novih okuzb v zadnjem casu v tej drzavi.
+4. Analiza stevila umrlih. Ali obstaja kaksna povezava med stevilom umrlih in povprecno starostjo v drzavi? Pregledal bom podatke po drzavah EU in skusal razumeti, ce res obstaja povezava.
+5. Raziskal bom podatke o simptomih bolezni in o pridruzenih boleznih umrlih.
+6. Pripravil bom videoposnetek kratke predstavitve projekta.
 
 Pripravil: *Urban Jezernik*
