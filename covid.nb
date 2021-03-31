@@ -10,10 +10,10 @@
 NotebookFileLineBreakTest
 NotebookFileLineBreakTest
 NotebookDataPosition[       158,          7]
-NotebookDataLength[   4097784,      70407]
-NotebookOptionsPosition[   4091947,      70308]
-NotebookOutlinePosition[   4092371,      70325]
-CellTagsIndexPosition[   4092328,      70322]
+NotebookDataLength[   4123797,      70971]
+NotebookOptionsPosition[   4116837,      70854]
+NotebookOutlinePosition[   4117261,      70871]
+CellTagsIndexPosition[   4117218,      70868]
 WindowFrame->Normal*)
 
 (* Beginning of Notebook Content *)
@@ -7581,7 +7581,7 @@ lastPathIsLeafHeader, TypeSystem`NestedGrid`PackagePrivate`headerHidden$ = And[
    3.825671122014564*^9},
  CellLabel->"Out[19]=",ExpressionUUID->"fa764e91-a408-4d89-bda1-722b1911ce88"]
 }, Open  ]]
-}, Open  ]],
+}, Closed]],
 
 Cell[CellGroupData[{
 
@@ -8533,8 +8533,9 @@ Cell[BoxData[
               BaseStyle -> {}, Evaluator -> Automatic, Method -> 
               "Preemptive"], Alignment -> {Center, Center}, ImageSize -> 
              Dynamic[{
-               Automatic, 3.5 CurrentValue["FontCapHeight"]/
-                AbsoluteCurrentValue[Magnification]}]], 
+               Automatic, 
+                3.5 (CurrentValue["FontCapHeight"]/AbsoluteCurrentValue[
+                 Magnification])}]], 
             GraphicsBox[{{{{}, {}, 
                 TagBox[{
                   Directive[
@@ -8587,8 +8588,9 @@ aWTbrMYQm1Sxbbw8QrreOiYrMcJCY2rPOEFoJhJPb/Qxxv8B0yC/5g==
               GridLines -> {None, None}, GridLinesStyle -> Directive[
                 GrayLevel[0.5, 0.4]], ImageSize -> 
               Dynamic[{
-                Automatic, 3.5 CurrentValue["FontCapHeight"]/
-                 AbsoluteCurrentValue[Magnification]}], 
+                Automatic, 
+                 3.5 (CurrentValue["FontCapHeight"]/AbsoluteCurrentValue[
+                  Magnification])}], 
               Method -> {
                "DefaultBoundaryStyle" -> Automatic, 
                 "DefaultGraphicsInteraction" -> {
@@ -8654,8 +8656,9 @@ aWTbrMYQm1Sxbbw8QrreOiYrMcJCY2rPOEFoJhJPb/Qxxv8B0yC/5g==
               BaseStyle -> {}, Evaluator -> Automatic, Method -> 
               "Preemptive"], Alignment -> {Center, Center}, ImageSize -> 
              Dynamic[{
-               Automatic, 3.5 CurrentValue["FontCapHeight"]/
-                AbsoluteCurrentValue[Magnification]}]], 
+               Automatic, 
+                3.5 (CurrentValue["FontCapHeight"]/AbsoluteCurrentValue[
+                 Magnification])}]], 
             GraphicsBox[{{{{}, {}, 
                 TagBox[{
                   Directive[
@@ -8708,8 +8711,9 @@ aWTbrMYQm1Sxbbw8QrreOiYrMcJCY2rPOEFoJhJPb/Qxxv8B0yC/5g==
               GridLines -> {None, None}, GridLinesStyle -> Directive[
                 GrayLevel[0.5, 0.4]], ImageSize -> 
               Dynamic[{
-                Automatic, 3.5 CurrentValue["FontCapHeight"]/
-                 AbsoluteCurrentValue[Magnification]}], 
+                Automatic, 
+                 3.5 (CurrentValue["FontCapHeight"]/AbsoluteCurrentValue[
+                  Magnification])}], 
               Method -> {
                "DefaultBoundaryStyle" -> Automatic, 
                 "DefaultGraphicsInteraction" -> {
@@ -10676,7 +10680,544 @@ cLRjy/D+bY68/wGc/bpn
  CellChangeTimes->{3.825672183655385*^9},
  CellLabel->"Out[34]=",ExpressionUUID->"91e6a7dc-8140-49ed-b13d-c8aba7c6c399"]
 }, Open  ]]
+}, Closed]],
+
+Cell[CellGroupData[{
+
+Cell["Novi primeri v odvisnosti od drzave", "Section",
+ CellChangeTimes->{{3.8262016938175507`*^9, 
+  3.826201717130312*^9}},ExpressionUUID->"019b3533-40c6-4be6-9218-\
+87b63eea1c04"],
+
+Cell[TextData[StyleBox["(Aplikacija v oblaku)",
+ FontSlant->"Italic"]], "Text",
+ CellChangeTimes->{{3.8262017033426943`*^9, 
+  3.8262017077106447`*^9}},ExpressionUUID->"5da97c90-145b-4f52-b3fa-\
+9371150044ac"],
+
+Cell[BoxData[
+ RowBox[{
+  RowBox[{"svetovniPodatki", " ", "=", " ", 
+   RowBox[{"ResourceData", "[", 
+    RowBox[{
+    "\"\<Epidemic Data for Novel Coronavirus COVID-19\>\"", ",", 
+     "\"\<WorldCountries\>\""}], "]"}]}], ";"}]], "Input",
+ CellChangeTimes->{3.8262017591334143`*^9},
+ CellLabel->"In[1]:=",ExpressionUUID->"832e5608-99e6-45e2-8939-29f667f25c2c"],
+
+Cell[BoxData[
+ RowBox[{
+  RowBox[{
+   RowBox[{"PrikaziNajnovejsePodatke", "[", "drzava_", "]"}], " ", ":=", " ", 
+   
+   RowBox[{"Module", "[", 
+    RowBox[{
+     RowBox[{"{", 
+      RowBox[{
+      "potrjeniPrimeri", ",", " ", "potrjeniPrimeriNormalizirani", ",", " ", 
+       "povprecje"}], "}"}], ",", "\[IndentingNewLine]", 
+     RowBox[{
+      RowBox[{"potrjeniPrimeri", " ", "=", " ", 
+       RowBox[{
+        RowBox[{
+         RowBox[{"Select", "[", 
+          RowBox[{"svetovniPodatki", ",", " ", 
+           RowBox[{
+            RowBox[{
+             RowBox[{"#", "[", "\"\<Country\>\"", "]"}], " ", "\[Equal]", " ",
+              "drzava"}], "&"}]}], "]"}], "[", 
+         RowBox[{"[", "1", "]"}], "]"}], "[", 
+        RowBox[{"[", "\"\<ConfirmedCases\>\"", "]"}], "]"}]}], ";", 
+      "\[IndentingNewLine]", 
+      RowBox[{"potrjeniPrimeriNormalizirani", " ", "=", " ", 
+       RowBox[{"100000", " ", "*", " ", 
+        RowBox[{"potrjeniPrimeri", " ", "/", " ", 
+         RowBox[{"drzava", "[", "\"\<Population\>\"", "]"}]}]}]}], ";", 
+      "\[IndentingNewLine]", 
+      RowBox[{"povprecje", " ", "=", " ", 
+       RowBox[{"MovingAverage", "[", 
+        RowBox[{
+         RowBox[{"Differences", "[", "potrjeniPrimeriNormalizirani", "]"}], 
+         ",", " ", "7"}], "]"}]}], ";", "\[IndentingNewLine]", 
+      RowBox[{"DateListPlot", "[", 
+       RowBox[{"povprecje", ",", " ", 
+        RowBox[{"PlotLabel", "\[Rule]", 
+         RowBox[{"StringForm", "[", 
+          RowBox[{
+          "\"\<7-dnevno povprecje novih dnevnih primerov Covid-19 za drzavo \
+`` na 100.000 prebivalcev\>\"", ",", " ", 
+           RowBox[{"ToUpperCase", "[", 
+            RowBox[{"drzava", "[", "\"\<Name\>\"", "]"}], "]"}]}], "]"}]}], 
+        ",", " ", 
+        RowBox[{"PlotTheme", "\[Rule]", "\"\<Scientific\>\""}], ",", " ", 
+        RowBox[{"ImageSize", "\[Rule]", "Large"}], ",", 
+        RowBox[{"PlotRange", "\[Rule]", 
+         RowBox[{"{", 
+          RowBox[{
+           RowBox[{"{", 
+            RowBox[{
+             NamespaceBox["LinguisticAssistant",
+              
+              DynamicModuleBox[{Typeset`query$$ = "Three months ago", 
+               Typeset`boxes$$ = RowBox[{"DatePlus", "[", 
+                 RowBox[{"Today", ",", " ", 
+                   RowBox[{"-", 
+                    
+                    TemplateBox[{"3", "\"mo\"", "months", "\"Months\""}, 
+                    "Quantity", SyntaxForm -> Mod]}]}], "]"}], 
+               Typeset`allassumptions$$ = {}, Typeset`assumptions$$ = {}, 
+               Typeset`open$$ = {1, 2}, Typeset`querystate$$ = {
+               "Online" -> True, "Allowed" -> True, "mparse.jsp" -> 
+                0.897457`6.404558642824218, "Messages" -> {}}}, 
+               DynamicBox[ToBoxes[
+                 AlphaIntegration`LinguisticAssistantBoxes["", 4, Automatic, 
+                  Dynamic[Typeset`query$$], 
+                  Dynamic[Typeset`boxes$$], 
+                  Dynamic[Typeset`allassumptions$$], 
+                  Dynamic[Typeset`assumptions$$], 
+                  Dynamic[Typeset`open$$], 
+                  Dynamic[Typeset`querystate$$]], StandardForm],
+                ImageSizeCache->{264., {13.5, 17.5}},
+                
+                TrackedSymbols:>{
+                 Typeset`query$$, Typeset`boxes$$, Typeset`allassumptions$$, 
+                  Typeset`assumptions$$, Typeset`open$$, 
+                  Typeset`querystate$$}],
+               DynamicModuleValues:>{},
+               UndoTrackedVariables:>{Typeset`open$$}],
+              BaseStyle->{"Deploy"},
+              DeleteWithContents->True,
+              Editable->False,
+              SelectWithContents->True], ",", 
+             NamespaceBox["LinguisticAssistant",
+              
+              DynamicModuleBox[{Typeset`query$$ = "Today", Typeset`boxes$$ = 
+               "Today", 
+               Typeset`allassumptions$$ = {{
+                "type" -> "Clash", "word" -> "Today", "template" -> 
+                 "Assuming \"${word}\" is ${desc1}. Use as ${desc2} instead", 
+                 "count" -> "2", 
+                 "Values" -> {{
+                   "name" -> "DateObject", "desc" -> "a date", "input" -> 
+                    "*C.Today-_*DateObject-"}, {
+                   "name" -> "Word", "desc" -> "a word", "input" -> 
+                    "*C.Today-_*Word-"}}}}, Typeset`assumptions$$ = {}, 
+               Typeset`open$$ = {1, 2}, Typeset`querystate$$ = {
+               "Online" -> True, "Allowed" -> True, "mparse.jsp" -> 
+                0.674266`6.280376254337276, "Messages" -> {}}}, 
+               DynamicBox[ToBoxes[
+                 AlphaIntegration`LinguisticAssistantBoxes["", 4, Automatic, 
+                  Dynamic[Typeset`query$$], 
+                  Dynamic[Typeset`boxes$$], 
+                  Dynamic[Typeset`allassumptions$$], 
+                  Dynamic[Typeset`assumptions$$], 
+                  Dynamic[Typeset`open$$], 
+                  Dynamic[Typeset`querystate$$]], StandardForm],
+                ImageSizeCache->{129., {11.5, 17.5}},
+                
+                TrackedSymbols:>{
+                 Typeset`query$$, Typeset`boxes$$, Typeset`allassumptions$$, 
+                  Typeset`assumptions$$, Typeset`open$$, 
+                  Typeset`querystate$$}],
+               DynamicModuleValues:>{},
+               UndoTrackedVariables:>{Typeset`open$$}],
+              BaseStyle->{"Deploy"},
+              DeleteWithContents->True,
+              Editable->False,
+              SelectWithContents->True]}], "}"}], ",", "Automatic"}], 
+          "}"}]}]}], " ", "]"}]}]}], "\[IndentingNewLine]", "]"}]}], 
+  ";"}]], "Input",
+ CellChangeTimes->{{3.8262018858693867`*^9, 3.826201964788047*^9}, {
+  3.826202002368269*^9, 3.826202112468697*^9}, {3.826202163908494*^9, 
+  3.826202184588633*^9}, {3.826202282155513*^9, 3.8262023219326897`*^9}, {
+  3.826202370031283*^9, 3.8262023736724854`*^9}},
+ CellLabel->"In[13]:=",ExpressionUUID->"4fadf627-a177-478d-9bc2-02608977a378"],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"PrikaziNajnovejsePodatke", "[", 
+  NamespaceBox["LinguisticAssistant",
+   DynamicModuleBox[{Typeset`query$$ = "France", Typeset`boxes$$ = 
+    TemplateBox[{"\"France\"", 
+      RowBox[{"Entity", "[", 
+        RowBox[{"\"Country\"", ",", "\"France\""}], "]"}], 
+      "\"Entity[\\\"Country\\\", \\\"France\\\"]\"", "\"country\""}, 
+     "Entity"], Typeset`allassumptions$$ = {}, Typeset`assumptions$$ = {}, 
+    Typeset`open$$ = {1, 2}, Typeset`querystate$$ = {
+    "Online" -> True, "Allowed" -> True, "mparse.jsp" -> 
+     0.875775`6.393937537095839, "Messages" -> {}}}, 
+    DynamicBox[ToBoxes[
+      AlphaIntegration`LinguisticAssistantBoxes["", 4, Automatic, 
+       Dynamic[Typeset`query$$], 
+       Dynamic[Typeset`boxes$$], 
+       Dynamic[Typeset`allassumptions$$], 
+       Dynamic[Typeset`assumptions$$], 
+       Dynamic[Typeset`open$$], 
+       Dynamic[Typeset`querystate$$]], StandardForm],
+     ImageSizeCache->{153., {8., 18.}},
+     TrackedSymbols:>{
+      Typeset`query$$, Typeset`boxes$$, Typeset`allassumptions$$, 
+       Typeset`assumptions$$, Typeset`open$$, Typeset`querystate$$}],
+    DynamicModuleValues:>{},
+    UndoTrackedVariables:>{Typeset`open$$}],
+   BaseStyle->{"Deploy"},
+   DeleteWithContents->True,
+   Editable->False,
+   SelectWithContents->True], "]"}]], "Input",
+ CellChangeTimes->{{3.826202121410387*^9, 3.826202123760651*^9}, {
+  3.826202194802142*^9, 3.826202233825696*^9}},
+ CellLabel->"In[14]:=",ExpressionUUID->"05c768c9-8ab1-45e1-ad18-7dc94f59549e"],
+
+Cell[BoxData[
+ GraphicsBox[{{}, {{}, {}, 
+    {RGBColor[0.9, 0.36, 0.054], PointSize[0.007333333333333334], 
+     AbsoluteThickness[1.6], CapForm["Butt"], LineBox[CompressedData["
+1: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
+      
+      "]]}}, {{}, {}}},
+  AspectRatio->NCache[GoldenRatio^(-1), 0.6180339887498948],
+  Axes->{False, False},
+  AxesLabel->{None, None},
+  AxesOrigin->{3.8183616*^9, 0},
+  DisplayFunction->Identity,
+  Frame->{{True, True}, {True, True}},
+  FrameLabel->{{None, None}, {None, None}},
+  FrameStyle->Automatic,
+  FrameTicks->FrontEndValueCache[{{Automatic, Automatic}, {
+      Charting`DateTicksFunction[Automatic, DateTicksFormat -> {Automatic}], 
+      Charting`DateTicksFunction[
+      Automatic, DateTicksFormat -> {Automatic}, "TickLabels" -> None]}}, {{
+     Automatic, Automatic}, {{{3.8157696*^9, 
+        FormBox[
+         StyleBox["\"Dec\"", 
+          Directive[], {}, StripOnInput -> False], TraditionalForm], {
+        0.013888888888888888`, 0.}, 
+        Directive[]}, {3.818448*^9, 
+        FormBox[
+         StyleBox["\"Jan\"", 
+          Directive[], {}, StripOnInput -> False], TraditionalForm], {
+        0.013888888888888888`, 0.}, 
+        Directive[]}, {3.8211264*^9, 
+        FormBox[
+         StyleBox["\"Feb\"", 
+          Directive[], {}, StripOnInput -> False], TraditionalForm], {
+        0.013888888888888888`, 0.}, 
+        Directive[]}, {3.8235456*^9, 
+        FormBox[
+         StyleBox["\"Mar\"", 
+          Directive[], {}, StripOnInput -> False], TraditionalForm], {
+        0.013888888888888888`, 0.}, 
+        Directive[]}, {3.826224*^9, 
+        FormBox[
+         StyleBox["\"Apr\"", 
+          Directive[], {}, StripOnInput -> False], TraditionalForm], {
+        0.013888888888888888`, 0.}, 
+        Directive[]}}, {{3.8157696*^9, 
+        FormBox[
+         TemplateBox[{0., 0.}, "Spacer2"], TraditionalForm], {
+        0.013888888888888888`, 0.}, 
+        Directive[]}, {3.818448*^9, 
+        FormBox[
+         TemplateBox[{0., 0.}, "Spacer2"], TraditionalForm], {
+        0.013888888888888888`, 0.}, 
+        Directive[]}, {3.8211264*^9, 
+        FormBox[
+         TemplateBox[{0., 0.}, "Spacer2"], TraditionalForm], {
+        0.013888888888888888`, 0.}, 
+        Directive[]}, {3.8235456*^9, 
+        FormBox[
+         TemplateBox[{0., 0.}, "Spacer2"], TraditionalForm], {
+        0.013888888888888888`, 0.}, 
+        Directive[]}, {3.826224*^9, 
+        FormBox[
+         TemplateBox[{0., 0.}, "Spacer2"], TraditionalForm], {
+        0.013888888888888888`, 0.}, 
+        Directive[]}}}}],
+  GridLines->{{0.}, {0}},
+  GridLinesStyle->Directive[
+    GrayLevel[0.5, 0.4]],
+  ImageSize->Large,
+  LabelStyle->{FontFamily -> "Times"},
+  Method->{
+   "NoShowPlotTheme" -> "Scientific", "OptimizePlotMarkers" -> True, 
+    "OptimizePlotMarkers" -> True, 
+    "CoordinatesToolOptions" -> {"DisplayFunction" -> ({
+        Identity[
+         Part[#, 1]], 
+        Identity[
+         Part[#, 2]]}& ), "CopiedValueFunction" -> ({
+        Identity[
+         Part[#, 1]], 
+        Identity[
+         Part[#, 2]]}& )}},
+  PlotLabel->FormBox[
+    InterpretationBox[
+    "\"7-dnevno povprecje novih dnevnih primerov Covid-19 za drzavo FRANCE na \
+100.000 prebivalcev\"", 
+     StringForm[
+     "7-dnevno povprecje novih dnevnih primerov Covid-19 za drzavo `` na \
+100.000 prebivalcev", "FRANCE"], Editable -> False], TraditionalForm],
+  PlotRange->{{3.8183616*^9, 3.8261376*^9}, {-0.18424765181357805`, 
+   85.84141966483128}},
+  PlotRangeClipping->True,
+  PlotRangePadding->{{0, 0}, {
+     Scaled[0.05], 
+     Scaled[0.05]}},
+  Ticks->{{}, Automatic}]], "Output",
+ CellChangeTimes->{
+  3.826202234845251*^9, {3.8262023067258663`*^9, 3.8262023251673203`*^9}, 
+   3.8262023766769667`*^9},
+ CellLabel->"Out[14]=",ExpressionUUID->"5654dd9f-6afb-4740-9ea0-5ca4a9aebb16"]
 }, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"obrazec", " ", "=", " ", 
+  RowBox[{"FormPage", "[", 
+   RowBox[{
+    RowBox[{"\"\<drzava\>\"", " ", "\[Rule]", " ", "\"\<Country\>\""}], ",", 
+    " ", 
+    RowBox[{
+     RowBox[{"PrikaziNajnovejsePodatke", "[", "#drzava", "]"}], " ", "&"}], 
+    ",", 
+    RowBox[{"AppearanceRules", "\[Rule]", 
+     RowBox[{"<|", 
+      RowBox[{
+       RowBox[{
+       "\"\<Title\>\"", " ", "->", " ", 
+        "\"\<Novi primeri okuzbe Covid-19\>\""}], ",", " ", 
+       RowBox[{
+       "\"\<Description\>\"", " ", "\[Rule]", " ", 
+        "\"\<Vnesi ime drzave, za katero zelis prikaz najnovejsih podatkov o \
+novih primerih okuzbe s Covid-19.\>\""}], ",", " ", 
+       RowBox[{
+       "\"\<SubmitLabel\>\"", " ", "\[Rule]", " ", "\"\<Prikazi\>\""}]}], 
+      "|>"}]}]}], "]"}]}]], "Input",
+ CellChangeTimes->{{3.814709302025333*^9, 3.8147093497672663`*^9}, {
+   3.814709383003421*^9, 3.814709459602681*^9}, {3.814709633404503*^9, 
+   3.814709638241982*^9}, {3.8147098119995527`*^9, 3.814709901292885*^9}, 
+   3.814709972406602*^9, {3.814710220611356*^9, 3.814710222700285*^9}, {
+   3.8262017815555677`*^9, 3.826201883516416*^9}},
+ CellLabel->"In[15]:=",ExpressionUUID->"1ca9d321-d0ed-407c-9c8a-24c61f928a6a"],
+
+Cell[BoxData[
+ InterpretationBox[
+  DynamicModuleBox[{Forms`FormPage`PackagePrivate`temp$$ = Association[
+   "drzava" -> Association["Interpreter" -> "Country", "Input" -> "France"]], 
+   Forms`FormPage`PackagePrivate`vals$$ = Association[
+   "drzava" -> Entity["Country", "France"]], 
+   Forms`FormPage`PackagePrivate`valid$$ = True, 
+   Forms`FormPage`PackagePrivate`form2$$ = FormObject[
+    Association[
+    "drzava" -> Association["Interpreter" -> "Country", "Input" -> "France"]], 
+    Association["drzava" -> Entity["Country", "France"]], AppearanceRules -> 
+    Association[
+     "Title" -> "Novi primeri okuzbe Covid-19", "Description" -> 
+      "Vnesi ime drzave, za katero zelis prikaz najnovejsih podatkov o novih \
+primerih okuzbe s Covid-19.", "SubmitLabel" -> "Prikazi"]], 
+   Forms`FormPage`PackagePrivate`valid2$$}, 
+   DynamicBox[ToBoxes[
+     With[{Forms`FormPage`PackagePrivate`formpane$ = Panel[
+         Forms`getFormLayout[
+          Forms`PackageScope`bindableForm[
+          Forms`FormPage`PackagePrivate`temp$$, 
+           Evaluate[Forms`FormPage`PackagePrivate`form2$$], None, None -> 
+           Forms`PackageScope`completeAction[
+            Forms`FormPage`PackagePrivate`form2$$, 
+             Forms`FormPage`PackagePrivate`temp$$, 
+             Forms`FormPage`PackagePrivate`vals$$, (
+             Unset[Forms`FormPage`PackagePrivate`vals$$]; 
+             Forms`FormPage`PackagePrivate`vals$$ = #; 
+             Forms`FormPage`PackagePrivate`valid2$$ = Not[
+                TrueQ[Forms`PackageScope`$DontComplete]])& , {
+             AppearanceRules -> 
+              Association[
+               "Title" -> "Novi primeri okuzbe Covid-19", "Description" -> 
+                "Vnesi ime drzave, za katero zelis prikaz najnovejsih \
+podatkov o novih primerih okuzbe s Covid-19.", "SubmitLabel" -> 
+                "Prikazi"]}]]]], Forms`FormPage`PackagePrivate`resultpane$ = 
+       Framed[
+         If[
+         Forms`FormPage`PackagePrivate`valid$$ = 
+          And[Forms`FormPage`PackagePrivate`vals$$ =!= Association[], 
+            FreeQ[
+             Values[Forms`FormPage`PackagePrivate`vals$$], 
+             Alternatives[
+              Blank[Failure], Forms`PackageScope`fieldHidden]], 
+            TrueQ[Forms`FormPage`PackagePrivate`valid2$$]], 
+          Unset[Forms`FormPage`PackagePrivate`valid2$$]; Style[
+            ($CellContext`PrikaziNajnovejsePodatke[
+             Slot["drzava"]]& )[Forms`FormPage`PackagePrivate`vals$$], 
+            "Output", "StandardForm"], 
+          Style["Invalid form", "Message"]], FrameStyle -> Lighter[Gray], 
+         Background -> White]}, 
+      Panel[
+       Column[
+        Forms`doLayout[
+        Automatic, Forms`FormPage`PackagePrivate`valid$$, {
+         Forms`FormPage`PackagePrivate`formpane$, 
+          Forms`FormPage`PackagePrivate`resultpane$, 
+          Panel[
+           Item[
+            Row[{
+              Spacer[0], 
+              DefaultButton[
+               Forms`PackageScope`completeAction[
+               Forms`FormPage`PackagePrivate`form2$$, 
+                Forms`FormPage`PackagePrivate`temp$$, 
+                Forms`FormPage`PackagePrivate`vals$$, (
+                Unset[Forms`FormPage`PackagePrivate`vals$$]; 
+                Forms`FormPage`PackagePrivate`vals$$ = #; 
+                Forms`FormPage`PackagePrivate`valid2$$ = Not[
+                   TrueQ[Forms`PackageScope`$DontComplete]])& , {
+                AppearanceRules -> 
+                 Association[
+                  "Title" -> "Novi primeri okuzbe Covid-19", "Description" -> 
+                   "Vnesi ime drzave, za katero zelis prikaz najnovejsih \
+podatkov o novih primerih okuzbe s Covid-19.", "SubmitLabel" -> 
+                   "Prikazi"]}]]}], Alignment -> Right]]}]]]], StandardForm],
+    ImageSizeCache->{760., {361., 369.}},
+    TrackedSymbols:>{Forms`FormPage`PackagePrivate`vals$$}],
+   DynamicModuleValues:>{}],
+  FormPage[
+   FormObject[
+    Association["drzava" -> Association["Interpreter" -> "Country"]], 
+    Association[], AppearanceRules -> 
+    Association[
+     "Title" -> "Novi primeri okuzbe Covid-19", "Description" -> 
+      "Vnesi ime drzave, za katero zelis prikaz najnovejsih podatkov o novih \
+primerih okuzbe s Covid-19.", "SubmitLabel" -> 
+      "Prikazi"]], $CellContext`PrikaziNajnovejsePodatke[
+    Slot["drzava"]]& ],
+  Editable->False,
+  SelectWithContents->True,
+  Selectable->False]], "Output",
+ CellChangeTimes->{3.826202413907318*^9},
+ CellLabel->"Out[15]=",ExpressionUUID->"7c8225e7-f934-481d-a65c-59e562f7ca03"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"CloudDeploy", "[", 
+  RowBox[{"obrazec", ",", " ", 
+   RowBox[{"Permissions", "\[Rule]", "\"\<Public\>\""}]}], "]"}]], "Input",
+ CellLabel->"In[16]:=",ExpressionUUID->"182e4970-c816-48e9-a415-d5d7ef96ad47"],
+
+Cell[BoxData[
+ InterpretationBox[
+  RowBox[{"CloudObject", "[", 
+   TemplateBox[{
+    "\"https://www.wolframcloud.com/obj/6972d519-fc3a-4515-95ed-5a202a83615e\"\
+", "https://www.wolframcloud.com/obj/6972d519-fc3a-4515-95ed-5a202a83615e"},
+    "HyperlinkURL"], "]"}],
+  CloudObject[
+  "https://www.wolframcloud.com/obj/6972d519-fc3a-4515-95ed-5a202a83615e"],
+  SelectWithContents->True]], "Output",
+ CellChangeTimes->{3.826202441121085*^9},
+ CellLabel->"Out[16]=",ExpressionUUID->"64997bf7-6734-4afe-a6bb-3f9faa0b7905"]
+}, Open  ]]
+}, Closed]],
 
 Cell[CellGroupData[{
 
@@ -14656,7 +15197,7 @@ Cell[BoxData[
                     ImageSize -> (1 -> 1), ImagePadding -> {{0, 1}, {1, 0}}, 
                     BaselinePosition -> Scaled[0.35]]], "LinkHand"], 
                     TypeSystem`NestedGrid`PackagePrivate`$vPos$$ = 
-                    Clip[TypeSystem`NestedGrid`PackagePrivate`$vPos$$ + (-20) 
+                    Clip[TypeSystem`NestedGrid`PackagePrivate`$vPos$$ - 20 
                     If[True, 223, 1], {1, 223 - -20 + 1}]; 
                     TypeSystem`NestedGrid`PackagePrivate`updateState[
                     TypeSystem`NestedGrid`PackagePrivate`$state$$, 
@@ -14701,7 +15242,7 @@ Cell[BoxData[
                     ImageSize -> (1 -> 1), ImagePadding -> {{0, 1}, {1, 0}}, 
                     BaselinePosition -> Scaled[0.35]]], "LinkHand"], 
                     TypeSystem`NestedGrid`PackagePrivate`$vPos$$ = 
-                    Clip[TypeSystem`NestedGrid`PackagePrivate`$vPos$$ + (-20) 
+                    Clip[TypeSystem`NestedGrid`PackagePrivate`$vPos$$ - 20 
                     If[False, 223, 1], {1, 223 - -20 + 1}]; 
                     TypeSystem`NestedGrid`PackagePrivate`updateState[
                     TypeSystem`NestedGrid`PackagePrivate`$state$$, 
@@ -15960,7 +16501,7 @@ Cell[BoxData[
                     ImageSize -> (1 -> 1), ImagePadding -> {{0, 1}, {1, 0}}, 
                     BaselinePosition -> Scaled[0.35]]], "LinkHand"], 
                     TypeSystem`NestedGrid`PackagePrivate`$vPos$$ = 
-                    Clip[TypeSystem`NestedGrid`PackagePrivate`$vPos$$ + (-20) 
+                    Clip[TypeSystem`NestedGrid`PackagePrivate`$vPos$$ - 20 
                     If[True, 27, 1], {1, 27 - -20 + 1}]; 
                     TypeSystem`NestedGrid`PackagePrivate`updateState[
                     TypeSystem`NestedGrid`PackagePrivate`$state$$, 
@@ -16006,7 +16547,7 @@ Cell[BoxData[
                     ImageSize -> (1 -> 1), ImagePadding -> {{0, 1}, {1, 0}}, 
                     BaselinePosition -> Scaled[0.35]]], "LinkHand"], 
                     TypeSystem`NestedGrid`PackagePrivate`$vPos$$ = 
-                    Clip[TypeSystem`NestedGrid`PackagePrivate`$vPos$$ + (-20) 
+                    Clip[TypeSystem`NestedGrid`PackagePrivate`$vPos$$ - 20 
                     If[False, 27, 1], {1, 27 - -20 + 1}]; 
                     TypeSystem`NestedGrid`PackagePrivate`updateState[
                     TypeSystem`NestedGrid`PackagePrivate`$state$$, 
@@ -70045,8 +70586,9 @@ zadnjih 7 dni\"", TraditionalForm],
                     0.33333333333333337`], FrameTicks -> None, 
                     PlotRangePadding -> None, ImageSize -> 
                     Dynamic[{
-                    Automatic, 1.35 CurrentValue["FontCapHeight"]/
-                    AbsoluteCurrentValue[Magnification]}]], 
+                    Automatic, 
+                    1.35 (CurrentValue["FontCapHeight"]/AbsoluteCurrentValue[
+                    Magnification])}]], 
                     StyleBox[
                     RowBox[{"RGBColor", "[", 
                     RowBox[{"1.`", ",", "0.92`", ",", "0.5`"}], "]"}], 
@@ -70089,8 +70631,9 @@ zadnjih 7 dni\"", TraditionalForm],
                     0.18500705526168004`], FrameTicks -> None, 
                     PlotRangePadding -> None, ImageSize -> 
                     Dynamic[{
-                    Automatic, 1.35 CurrentValue["FontCapHeight"]/
-                    AbsoluteCurrentValue[Magnification]}]], 
+                    Automatic, 
+                    1.35 (CurrentValue["FontCapHeight"]/AbsoluteCurrentValue[
+                    Magnification])}]], 
                     StyleBox[
                     RowBox[{"RGBColor", "[", 
                     
@@ -70133,8 +70676,9 @@ zadnjih 7 dni\"", TraditionalForm],
                     RGBColor[0.661623313331098, 0.27646965266510193`, 0.], 
                     FrameTicks -> None, PlotRangePadding -> None, ImageSize -> 
                     Dynamic[{
-                    Automatic, 1.35 CurrentValue["FontCapHeight"]/
-                    AbsoluteCurrentValue[Magnification]}]], 
+                    Automatic, 
+                    1.35 (CurrentValue["FontCapHeight"]/AbsoluteCurrentValue[
+                    Magnification])}]], 
                     StyleBox[
                     RowBox[{"RGBColor", "[", 
                     
@@ -70177,8 +70721,9 @@ zadnjih 7 dni\"", TraditionalForm],
                     RGBColor[0.5455757268385213, 0.19523634212029825`, 0.], 
                     FrameTicks -> None, PlotRangePadding -> None, ImageSize -> 
                     Dynamic[{
-                    Automatic, 1.35 CurrentValue["FontCapHeight"]/
-                    AbsoluteCurrentValue[Magnification]}]], 
+                    Automatic, 
+                    1.35 (CurrentValue["FontCapHeight"]/AbsoluteCurrentValue[
+                    Magnification])}]], 
                     StyleBox[
                     RowBox[{"RGBColor", "[", 
                     
@@ -70220,8 +70765,9 @@ zadnjih 7 dni\"", TraditionalForm],
                     FrameStyle -> RGBColor[0.4666666666666667, 0.14, 0.], 
                     FrameTicks -> None, PlotRangePadding -> None, ImageSize -> 
                     Dynamic[{
-                    Automatic, 1.35 CurrentValue["FontCapHeight"]/
-                    AbsoluteCurrentValue[Magnification]}]], 
+                    Automatic, 
+                    1.35 (CurrentValue["FontCapHeight"]/AbsoluteCurrentValue[
+                    Magnification])}]], 
                     StyleBox[
                     RowBox[{"RGBColor", "[", 
                     RowBox[{"0.7`", ",", "0.21`", ",", "0.`"}], "]"}], 
@@ -70346,9 +70892,9 @@ Cell[CellGroupData[{
 Cell[132110, 2578, 376, 9, 37, "Input",ExpressionUUID->"8afce086-09d5-411e-84ba-8aadc5f4b56d"],
 Cell[132489, 2589, 263075, 4992, 749, "Output",ExpressionUUID->"fa764e91-a408-4d89-bda1-722b1911ce88"]
 }, Open  ]]
-}, Open  ]],
+}, Closed]],
 Cell[CellGroupData[{
-Cell[395613, 7587, 175, 3, 84, "Section",ExpressionUUID->"517d7274-63a8-41bf-be00-1104589dc0f4"],
+Cell[395613, 7587, 175, 3, 65, "Section",ExpressionUUID->"517d7274-63a8-41bf-be00-1104589dc0f4"],
 Cell[395791, 7592, 223, 4, 44, "Text",ExpressionUUID->"082cc481-dc95-4367-bac7-04a233cd70ec"],
 Cell[CellGroupData[{
 Cell[396039, 7600, 1680, 35, 47, "Input",ExpressionUUID->"4c0aab4e-db50-4bdd-a997-95ef4206ca96"],
@@ -70356,56 +70902,74 @@ Cell[397722, 7637, 48743, 866, 167, "Output",ExpressionUUID->"c7d71ba3-c60c-4ef9
 }, Open  ]],
 Cell[CellGroupData[{
 Cell[446502, 8508, 333, 7, 37, "Input",ExpressionUUID->"e744508c-18d6-41aa-8bd3-fbe7ec94c320"],
-Cell[446838, 8517, 15790, 314, 77, "Output",ExpressionUUID->"4449ff48-c4cb-4ab2-b89e-987023e87194"]
+Cell[446838, 8517, 15872, 318, 77, "Output",ExpressionUUID->"4449ff48-c4cb-4ab2-b89e-987023e87194"]
 }, Open  ]],
 Cell[CellGroupData[{
-Cell[462665, 8836, 477, 9, 90, "Input",ExpressionUUID->"2291f0b4-b594-4f3b-aba6-cc623ccabc8f"],
-Cell[463145, 8847, 13106, 312, 478, "Output",ExpressionUUID->"fe02db85-f5d7-49fa-bf76-da7d48fa843a"]
+Cell[462747, 8840, 477, 9, 90, "Input",ExpressionUUID->"2291f0b4-b594-4f3b-aba6-cc623ccabc8f"],
+Cell[463227, 8851, 13106, 312, 478, "Output",ExpressionUUID->"fe02db85-f5d7-49fa-bf76-da7d48fa843a"]
 }, Open  ]],
 Cell[CellGroupData[{
-Cell[476288, 9164, 510, 10, 90, "Input",ExpressionUUID->"70d66e43-b26f-4a5c-b25c-192131051de8"],
-Cell[476801, 9176, 27301, 654, 484, "Output",ExpressionUUID->"74d150a8-182b-4a4f-84ce-a38440878755"]
+Cell[476370, 9168, 510, 10, 90, "Input",ExpressionUUID->"70d66e43-b26f-4a5c-b25c-192131051de8"],
+Cell[476883, 9180, 27301, 654, 484, "Output",ExpressionUUID->"74d150a8-182b-4a4f-84ce-a38440878755"]
 }, Open  ]],
-Cell[504117, 9833, 171, 3, 44, "Text",ExpressionUUID->"51ff1844-2fa8-41c5-a969-9f36e60ba363"],
+Cell[504199, 9837, 171, 3, 44, "Text",ExpressionUUID->"51ff1844-2fa8-41c5-a969-9f36e60ba363"],
 Cell[CellGroupData[{
-Cell[504313, 9840, 3665, 79, 136, "Input",ExpressionUUID->"e1a894bb-6802-47e2-84ac-dad1061e1a6e"],
-Cell[507981, 9921, 7235, 160, 487, "Output",ExpressionUUID->"95762132-082b-429d-97e9-7cd668e905b2"]
+Cell[504395, 9844, 3665, 79, 136, "Input",ExpressionUUID->"e1a894bb-6802-47e2-84ac-dad1061e1a6e"],
+Cell[508063, 9925, 7235, 160, 487, "Output",ExpressionUUID->"95762132-082b-429d-97e9-7cd668e905b2"]
 }, Open  ]],
-Cell[515231, 10084, 199, 3, 44, "Text",ExpressionUUID->"3514735f-cc9e-4d03-b80b-1149c1731210"],
-Cell[515433, 10089, 435, 9, 37, "Input",ExpressionUUID->"09d8a367-1420-4e65-a213-f56b73e2eb90"],
+Cell[515313, 10088, 199, 3, 44, "Text",ExpressionUUID->"3514735f-cc9e-4d03-b80b-1149c1731210"],
+Cell[515515, 10093, 435, 9, 37, "Input",ExpressionUUID->"09d8a367-1420-4e65-a213-f56b73e2eb90"],
 Cell[CellGroupData[{
-Cell[515893, 10102, 3632, 78, 136, "Input",ExpressionUUID->"282e3be2-ed55-4add-bc73-809fbb2660f8"],
-Cell[519528, 10182, 7662, 166, 487, "Output",ExpressionUUID->"01029d70-88ed-4bbd-9d67-04eae641e27a"]
+Cell[515975, 10106, 3632, 78, 136, "Input",ExpressionUUID->"282e3be2-ed55-4add-bc73-809fbb2660f8"],
+Cell[519610, 10186, 7662, 166, 487, "Output",ExpressionUUID->"01029d70-88ed-4bbd-9d67-04eae641e27a"]
 }, Open  ]],
-Cell[527205, 10351, 179, 3, 37, "Input",ExpressionUUID->"17dad9ca-4a69-4ce2-a3c1-0130e53f7863"],
-Cell[527387, 10356, 222, 5, 44, "Text",ExpressionUUID->"6f41c471-bbba-448c-807d-1888e066f7f0"],
-Cell[527612, 10363, 1759, 36, 72, "Input",ExpressionUUID->"16da3051-fca2-4836-a486-b02e6d32e7a8"],
+Cell[527287, 10355, 179, 3, 37, "Input",ExpressionUUID->"17dad9ca-4a69-4ce2-a3c1-0130e53f7863"],
+Cell[527469, 10360, 222, 5, 44, "Text",ExpressionUUID->"6f41c471-bbba-448c-807d-1888e066f7f0"],
+Cell[527694, 10367, 1759, 36, 72, "Input",ExpressionUUID->"16da3051-fca2-4836-a486-b02e6d32e7a8"],
 Cell[CellGroupData[{
-Cell[529396, 10403, 3663, 78, 162, "Input",ExpressionUUID->"b7b49643-4ff3-4381-98ab-cce83a5c9770"],
-Cell[533062, 10483, 9329, 193, 490, "Output",ExpressionUUID->"91e6a7dc-8140-49ed-b13d-c8aba7c6c399"]
+Cell[529478, 10407, 3663, 78, 162, "Input",ExpressionUUID->"b7b49643-4ff3-4381-98ab-cce83a5c9770"],
+Cell[533144, 10487, 9329, 193, 490, "Output",ExpressionUUID->"91e6a7dc-8140-49ed-b13d-c8aba7c6c399"]
 }, Open  ]]
+}, Closed]],
+Cell[CellGroupData[{
+Cell[542522, 10686, 182, 3, 65, "Section",ExpressionUUID->"019b3533-40c6-4be6-9218-87b63eea1c04"],
+Cell[542707, 10691, 209, 4, 44, "Text",ExpressionUUID->"5da97c90-145b-4f52-b3fa-9371150044ac"],
+Cell[542919, 10697, 361, 8, 64, "Input",ExpressionUUID->"832e5608-99e6-45e2-8939-29f667f25c2c"],
+Cell[543283, 10707, 5959, 126, 416, "Input",ExpressionUUID->"4fadf627-a177-478d-9bc2-02608977a378"],
+Cell[CellGroupData[{
+Cell[549267, 10837, 1515, 32, 47, "Input",ExpressionUUID->"05c768c9-8ab1-45e1-ad18-7dc94f59549e"],
+Cell[550785, 10871, 9810, 197, 494, "Output",ExpressionUUID->"5654dd9f-6afb-4740-9ea0-5ca4a9aebb16"]
 }, Open  ]],
 Cell[CellGroupData[{
-Cell[542440, 10682, 169, 3, 84, "Section",ExpressionUUID->"22c31304-df02-43d7-b12f-dc8452547d84"],
-Cell[542612, 10687, 256, 5, 44, "Text",ExpressionUUID->"bb3fcdec-f084-4b3e-b26c-f41ae0754509"],
-Cell[542871, 10694, 196, 3, 44, "Text",ExpressionUUID->"b5b03512-ba9e-41f3-a08a-e3372759e552"],
-Cell[CellGroupData[{
-Cell[543092, 10701, 322, 7, 64, "Input",ExpressionUUID->"348a8e9e-2763-4c35-96b1-79b179feb8e5"],
-Cell[543417, 10710, 943, 15, 173, "Output",ExpressionUUID->"03b2c1be-7063-4bbb-b4a3-e7483bd6dedc"]
+Cell[560632, 11073, 1220, 27, 142, "Input",ExpressionUUID->"1ca9d321-d0ed-407c-9c8a-24c61f928a6a"],
+Cell[561855, 11102, 4535, 93, 753, "Output",ExpressionUUID->"7c8225e7-f934-481d-a65c-59e562f7ca03"]
 }, Open  ]],
 Cell[CellGroupData[{
-Cell[544397, 10730, 362, 7, 64, "Input",ExpressionUUID->"5c8eb966-3b85-4760-acb9-4c97d832aa9a"],
-Cell[544762, 10739, 227415, 4471, 1429, "Output",ExpressionUUID->"856b7b5f-a0f5-4adb-bcdc-6f462248a714"]
-}, Open  ]],
-Cell[772192, 15213, 346, 7, 44, "Text",ExpressionUUID->"e7f72147-6c53-49e0-9ec1-d3b966405a7f"],
-Cell[772541, 15222, 2074, 44, 82, "Input",ExpressionUUID->"e94908e6-9da5-4a18-bbfa-b1158ccd622d"],
+Cell[566427, 11200, 230, 4, 37, "Input",ExpressionUUID->"182e4970-c816-48e9-a415-d5d7ef96ad47"],
+Cell[566660, 11206, 518, 11, 46, "Output",ExpressionUUID->"64997bf7-6734-4afe-a6bb-3f9faa0b7905"]
+}, Open  ]]
+}, Closed]],
 Cell[CellGroupData[{
-Cell[774640, 15270, 4325, 87, 190, "Input",ExpressionUUID->"f5e4e326-1d65-403e-82a3-72769373f110"],
-Cell[778968, 15359, 61448, 1164, 873, "Output",ExpressionUUID->"3e46f012-04a5-490d-a822-051be3ce9eaf"]
+Cell[567227, 11223, 169, 3, 65, "Section",ExpressionUUID->"22c31304-df02-43d7-b12f-dc8452547d84"],
+Cell[567399, 11228, 256, 5, 44, "Text",ExpressionUUID->"bb3fcdec-f084-4b3e-b26c-f41ae0754509"],
+Cell[567658, 11235, 196, 3, 44, "Text",ExpressionUUID->"b5b03512-ba9e-41f3-a08a-e3372759e552"],
+Cell[CellGroupData[{
+Cell[567879, 11242, 322, 7, 64, "Input",ExpressionUUID->"348a8e9e-2763-4c35-96b1-79b179feb8e5"],
+Cell[568204, 11251, 943, 15, 173, "Output",ExpressionUUID->"03b2c1be-7063-4bbb-b4a3-e7483bd6dedc"]
 }, Open  ]],
 Cell[CellGroupData[{
-Cell[840453, 16528, 479, 10, 90, "Input",ExpressionUUID->"aad50fce-8293-4454-b728-8566e2a0a286"],
-Cell[840935, 16540, 3250972, 53763, 568, "Output",ExpressionUUID->"aa761fd1-3e96-4cc3-b78e-78685dfe6708"]
+Cell[569184, 11271, 362, 7, 64, "Input",ExpressionUUID->"5c8eb966-3b85-4760-acb9-4c97d832aa9a"],
+Cell[569549, 11280, 227409, 4471, 1429, "Output",ExpressionUUID->"856b7b5f-a0f5-4adb-bcdc-6f462248a714"]
+}, Open  ]],
+Cell[796973, 15754, 346, 7, 44, "Text",ExpressionUUID->"e7f72147-6c53-49e0-9ec1-d3b966405a7f"],
+Cell[797322, 15763, 2074, 44, 82, "Input",ExpressionUUID->"e94908e6-9da5-4a18-bbfa-b1158ccd622d"],
+Cell[CellGroupData[{
+Cell[799421, 15811, 4325, 87, 190, "Input",ExpressionUUID->"f5e4e326-1d65-403e-82a3-72769373f110"],
+Cell[803749, 15900, 61442, 1164, 873, "Output",ExpressionUUID->"3e46f012-04a5-490d-a822-051be3ce9eaf"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[865228, 17069, 479, 10, 90, "Input",ExpressionUUID->"aad50fce-8293-4454-b728-8566e2a0a286"],
+Cell[865710, 17081, 3251087, 53768, 548, "Output",ExpressionUUID->"aa761fd1-3e96-4cc3-b78e-78685dfe6708"]
 }, Open  ]]
 }, Open  ]]
 }, Open  ]]
