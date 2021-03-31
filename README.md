@@ -13,4 +13,10 @@ Pri projektu uporabljamo racunalniski program _Mathematica_.
 5. Raziskal bom podatke o simptomih bolezni in o pridruzenih boleznih umrlih.
 6. Pripravil bom videoposnetek kratke predstavitve projekta.
 
+### Aplikacija
+
+Pri projektu sem pripravil aplikacijo v Wolfram cloud. Dostopna je na spodnjem naslovu:
+
+https://www.wolframcloud.com/obj/6972d519-fc3a-4515-95ed-5a202a83615e
+
 Pripravil: *Urban Jezernik*
