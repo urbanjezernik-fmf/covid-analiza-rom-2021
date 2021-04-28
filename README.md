@@ -17,6 +17,6 @@ Pri projektu uporabljamo racunalniski program _Mathematica_.
 
 Pri projektu sem pripravil aplikacijo v Wolfram cloud. Dostopna je na spodnjem naslovu:
 
-https://www.wolframcloud.com/obj/6972d519-fc3a-4515-95ed-5a202a83615e
+https://www.wolframcloud.com/obj/a39faf23-e6d8-4a0a-871d-9dc7a80c5454
 
 Pripravil: *Urban Jezernik*
